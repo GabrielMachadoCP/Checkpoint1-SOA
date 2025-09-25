@@ -28,7 +28,7 @@ API REST **simples e funcional** da loja ByteShop, seguindo o **modelo da profes
 
 ## Arquitetura & Padrões
 - **Camadas**
-  - `web/` (Controllers + DTOs)
+  - `controller/` (Controllers + DTOs)
   - `service/` (regras de negócio)
   - `repository/` (JPA Repositories)
   - `domain/` (Entidades JPA)
