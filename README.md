@@ -32,10 +32,8 @@ API REST **simples e funcional** da loja ByteShop, seguindo o **modelo da profes
   - `service/` (regras de negócio)
   - `repository/` (JPA Repositories)
   - `domain/` (Entidades JPA)
-  - `infrastructure/` (Swagger config + ExceptionHandler)
 - **DTOs** separados para **Request** e **Response**.
 - **Validação** com Bean Validation (ex.: `@NotNull`, `@Email`, `@Size`).
-- **Tratamento global de erros** com `@ControllerAdvice` (JSON padronizado).
 - **H2 em memória** + `schema.sql` e `data.sql` aplicados na inicialização.
 
 ---
@@ -43,7 +41,7 @@ API REST **simples e funcional** da loja ByteShop, seguindo o **modelo da profes
 ## Requisitos
 - **Java 21** (JDK 21)
 - **Maven 3.8+**
-- Nenhuma instalação de banco: H2 roda em memória (modo MySQL).
+- Nenhuma instalação de banco: H2 roda em memória.
 
 ---
 
@@ -73,7 +71,6 @@ A aplicação inicia em: `http://localhost:8080`
 
 ## Swagger / OpenAPI
 - **Swagger UI**: `http://localhost:8080/swagger-ui.html`  
-- **OpenAPI JSON**: `http://localhost:8080/v3/api-docs`
 
 > Dica: Clique em **Try it out** para habilitar edição dos parâmetros (ex.: `{id}`).  
 > Se o campo `{id}` não aparecer, garanta que os controllers usam `@PathVariable("id")` e o `pom.xml` tem `<parameters>true</parameters>` no `maven-compiler-plugin`.
@@ -530,12 +527,10 @@ src
  │   │   ├─ service/             # Regras de negócio
  │   │   ├─ controller/          # Controllers REST
  │   │   │   └─ dto/             # DTOs request/response
- │   │   └─ infrastructure/      # Swagger + ExceptionHandler
  │   └─ resources/
  │       ├─ application.properties
  │       ├─ schema.sql
- │       └─ data.sql
- └─ test/java/...                # (se houver testes)
+ │       └─ data.sql           
 ```
 
 ---
